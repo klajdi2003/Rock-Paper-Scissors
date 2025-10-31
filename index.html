@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple rock, paper and scissors game">
+  <meta name="keywords" content="Html(HyperText Markup Language), Css(Cascading Style Sheets) and Javascript( scripting language that enables you to create dynamically updating content, control multimedia, animate images, and much more.)">
+  <meta name="author" content="Klajdi Belishta(IT)">
+  <title>Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/png" href="./photos/download.png">
+  <script defer src="./script.js"></script>
+</head>
+
+<body>
+
+  <p class="title">Rock Paper Scissors</p>
+
+
+  <div class="game-buttons-container">
+    
+    <!-- Rock Button -->
+    <button class="button-game" onclick="playGame('Rock')">
+      <img class="photo-game" src="./photos/rock-emoji.png" alt="Rock">
+    </button>
+
+    <!-- Paper Button -->
+    <button class="button-game" onclick="playGame('Paper')">
+      <img class="photo-game" src="./photos/paper-emoji.png" alt="Paper">
+    </button>
+
+    <!-- Scissors Button -->
+    <button class="button-game" onclick="playGame('Scissors')">
+      <img class="photo-game" src="./photos/scissors-emoji.png" alt="Scissors">
+    </button>
+  </div>
+
+  <!-- Game Info -->
+  <p class="js-result result"></p>
+  <p class="js-moves"></p>
+  <p class="js-score score"></p>
+
+  <!-- Controls -->
+  <div class="controls">
+    <button class="reset-score-button" onclick="
+      score.wins = 0;
+      score.losses = 0;
+      score.ties = 0;
+      localStorage.removeItem('score');
+      updateScoreElement();
+    ">
+      Reset Score
+    </button>
+
+    <button class="auto-play-button" onclick="autoPlay()">
+      Auto Play
+    </button>
+  </div>
+
+</body>
+</html>
